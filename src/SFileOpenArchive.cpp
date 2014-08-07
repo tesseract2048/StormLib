@@ -475,17 +475,17 @@ bool WINAPI SFileFlushArchive(HANDLE hMpq)
     // If the (listfile) has been invalidated, save it
     if(ha->dwFlags & MPQ_FLAG_LISTFILE_INVALID)
     {
-        nError = SListFileSaveToMpq(ha);
-        if(nError != ERROR_SUCCESS)
-            nResultError = nError;
+        //nError = SListFileSaveToMpq(ha);
+        //if(nError != ERROR_SUCCESS)
+        //    nResultError = nError;
     }
 
     // If the (attributes) has been invalidated, save it
     if(ha->dwFlags & MPQ_FLAG_ATTRIBUTES_INVALID)
     {
-        nError = SAttrFileSaveToMpq(ha);
-        if(nError != ERROR_SUCCESS)
-            nResultError = nError;
+        //nError = SAttrFileSaveToMpq(ha);
+        //if(nError != ERROR_SUCCESS)
+        //    nResultError = nError;
     }
 
     // Save HET table, BET table, hash table, block table, hi-block table

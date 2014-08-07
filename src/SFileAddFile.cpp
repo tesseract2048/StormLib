@@ -446,8 +446,13 @@ int SFileAddFile_Init(
     if(nError == ERROR_SUCCESS)
     {
         // At this point, the file name in the file entry must be set
-        assert(pFileEntry->szFileName != NULL);
-        assert(_stricmp(pFileEntry->szFileName, szFileName) == 0);
+        //assert(pFileEntry->szFileName != NULL);
+        //assert(_stricmp(pFileEntry->szFileName, szFileName) == 0);
+		if (pFileEntry->szFileName == NULL) {
+			char* fn = STORM_ALLOC(char, strlen(szFileName) + 1);
+			strcpy(fn, szFileName);
+			pFileEntry->szFileName = fn;
+		}
 
         // Initialize the hash entry for the file
         hf->pFileEntry = pFileEntry;
@@ -707,8 +712,8 @@ bool WINAPI SFileCreateFile(
             nError = ERROR_INVALID_PARAMETER;
 
         // Don't allow to add any of the internal files
-        if(IsInternalMpqFileName(szArchivedName))
-            nError = ERROR_INTERNAL_FILE;
+        //if(IsInternalMpqFileName(szArchivedName))
+        //    nError = ERROR_INTERNAL_FILE;
     }
 
     // Perform validity check of the MPQ flags

@@ -339,7 +339,11 @@ extern "C" {
 #define ERROR_WEAK_SIGNATURE_ERROR           3  // There is a weak signature but sign check failed
 #define ERROR_STRONG_SIGNATURE_OK            4  // There is a strong signature and sign check passed
 #define ERROR_STRONG_SIGNATURE_ERROR         5  // There is a strong signature but sign check failed
-                                           
+                                         
+// Return values for SFileSign
+#define ERROR_ALREADY_SIGNED                 1  // There is already a strong signature in the MPQ
+#define ERROR_QUERY_FAILED                   2  // Failed to query signature
+                                        
 #ifndef MD5_DIGEST_SIZE
 #define MD5_DIGEST_SIZE                   0x10
 #endif
@@ -1059,6 +1063,15 @@ int    WINAPI SFileVerifyRawData(HANDLE hMpq, DWORD dwWhatToVerify, const char *
 
 // Verifies the signature, if present
 DWORD  WINAPI SFileVerifyArchive(HANDLE hMpq);
+
+//-----------------------------------------------------------------------------
+// Functions for archive signing
+
+// Allocate sector for weak signature file in MPQ, note that SFileCloseArchive should be called after this
+DWORD WINAPI SFileAllocateWeakSignature(HANDLE hMpq);
+
+// Sign archive with weak signature, note that if you just allocated sector, reopen the archive before doing this
+DWORD WINAPI SFileSignArchiveWeak(HANDLE hMpq);
 
 //-----------------------------------------------------------------------------
 // Functions for file searching

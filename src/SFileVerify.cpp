@@ -727,7 +727,7 @@ bool QueryMpqSignatureInfo(
     CalculateArchiveRange(ha, pSI);
 
     // If there is "(signature)" file in the MPQ, it has a weak signature
-    if(SFileOpenFileEx((HANDLE)ha, SIGNATURE_NAME, SFILE_OPEN_BASE_FILE, &hFile))
+    if(SFileOpenFileEx((HANDLE)ha, SIGNATURE_NAME, SFILE_OPEN_ANY_LOCALE, &hFile))
     {
         // Get the content of the signature
         SFileReadFile(hFile, pSI->Signature, sizeof(pSI->Signature), &pSI->cbSignatureSize, NULL);

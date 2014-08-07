@@ -73,3 +73,6 @@ EXPORTS
     SCompExplode
     SCompCompress   
     SCompDecompress 
+
+	SFileAllocateWeakSignature
+	SFileSignArchiveWeak
