@@ -31,7 +31,7 @@ OBJS =  src/adpcm/adpcm.o \
 	src/FileStream.o \
 	src/huffman/huff.o \
 	src/SBaseCommon.o \
-        src/SBaseDumpData.o \
+	src/SBaseDumpData.o \
 	src/SBaseFileTable.o \
 	src/SBaseSubTypes.o \
 	src/SCompression.o \
@@ -48,7 +48,8 @@ OBJS =  src/adpcm/adpcm.o \
 	src/SFilePatchArchives.o \
 	src/SFileReadFile.o \
 	src/SFileVerify.o \
-	src/sparse/sparse.o
+	src/sparse/sparse.o \
+	src/SFileSign.o
 
 COBJS = src/libtomcrypt/src/hashes/sha1.o \
 	src/libtomcrypt/src/hashes/hash_memory.o \
@@ -244,7 +245,25 @@ COBJS = src/libtomcrypt/src/hashes/sha1.o \
 	src/lzma/C/LzFind.o \
 	src/lzma/C/LzmaEnc.o \
 	src/lzma/C/LzmaDec.o \
-	src/jenkins/lookup3.o
+	src/jenkins/lookup3.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_bit_string.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_boolean.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_ia5_string.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_integer.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_object_identifier.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_octet_string.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_printable_string.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_sequence_ex.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_sequence_multi.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_set.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_setof.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_short_integer.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_utctime.o \
+	src/libtomcrypt/src/pk/asn1/der_encode_utf8_string.o \
+	src/libtomcrypt/src/pk/pkcs1/pkcs_1_pss_encode.o \
+	src/libtomcrypt/src/pk/pkcs1/pkcs_1_v1_5_encode.o \
+	src/libtomcrypt/src/pk/rsa/rsa_sign_hash.o
+
 
 LIB = libStorm.so
 SLIB = libStorm.a

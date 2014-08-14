@@ -8,7 +8,7 @@
  *
  * Tom St Denis, tomstdenis@gmail.com, http://libtom.org
  */
-#include "tomcrypt.h"
+#include "../../headers/tomcrypt.h"
 
 /**
   @file der_encode_octet_string.c
