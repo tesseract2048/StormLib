@@ -8,7 +8,7 @@
  *
  * Tom St Denis, tomstdenis@gmail.com, http://libtom.org
  */
-#include "tomcrypt.h"
+#include "../../headers/tomcrypt.h"
 
 /** 
   @file pkcs_1_pss_encode.c
